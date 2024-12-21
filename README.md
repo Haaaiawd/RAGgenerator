@@ -1,4 +1,4 @@
-# MasteringRAG
+# RAGgenerator
 
 本项目包含一个基于 RAG (Retrieval-Augmented Generation) 的文档问答系统，可通过星火 API 或 OpenAI API 进行问答。
 
