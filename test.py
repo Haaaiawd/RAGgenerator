@@ -72,10 +72,16 @@ class RAGHelper:
         # 构建上下文
         context = "\n".join([d.page_content for d in docs])
         
-        # 构建prompt
+        # 使用prompt模板但保持原有消息格式
+        formatted_content = PROMPT_TEMPLATE.format(
+            context=context,
+            question=question
+        )
+        
+        # 保持原有的消息格式
         messages = [{
             "role": "user",
-            "content": f"基于以下内容回答问题:\n\n{context}\n\n问题: {question}"
+            "content": formatted_content
         }]
         
         # 使用讯飞大模型生成答案
